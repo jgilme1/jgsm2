@@ -138,6 +138,21 @@
     \end{align*}
 
 
+    \noindent \textbf{Exercise 1.5}
+
+    Suppose \(X_1, \dots X_N \stackrel{iid}{\sim} \text{Normal}(\theta, \sigma ^2) \) with \(\theta\) known
+    but \(\sigma ^2\) unknown. Suppose that \(\omega = \sigma^{-2}\) has a \(\text{Gam}(\alpha, \beta)\) prior.
+    Derive posterior of \(\omega | X_1, \dots X_n\)
+
+    \begin{align*}
+      h(\omega | X_{1:n}) \propto& f(x_{1:n}|\omega) h(\omega)\\
+        \propto& \omega^{n/2} \text{exp} \{ -w/2 \sum (x_i - \theta)^2  \} \cdot \omega^{\alpha -1}
+             \text{exp} \{ -\beta \omega \} \\
+        \propto& \text{ exp} \{ -\omega ( \beta + \frac{\sum (x_i - \theta)^2}{2}) \omega^{\alpha + n/2 -1}\\
+      \omega | X_{1:n} \sim& \text{Gamma}(\alpha + \frac{n}{2}, \beta + \frac{\sum (x_i - \theta)^2}{2})
+    \end{align*}
+
+
 
 
 \end{document}
