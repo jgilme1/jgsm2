@@ -13,7 +13,7 @@
     \noindent SDS 383 D - Statistical Modeling 2 \\
     \noindent Homework \\
 
-    \textbf{Exercise 1}
+    \noindent\textbf{Exercise 1}
 
     \(X_1, \dots X_n \sim Bernoulli(p), \quad h(p) \sim Beta(\alpha, \beta)\)
 
@@ -28,7 +28,21 @@
     \end{align*}
     \\
 
-    \textbf{Exercise 2}
+    \noindent\textbf{Exercise 2} \\ \\
+    \(X_1, \dots X_N \stackrel{iid}{\sim} Cat(p), \quad p = (p_1, \dots p_K), \quad
+       f(x | p) = \prod_{i=1}^{n} \prod_{k=1}^{K} p_k ^{I(x_i = k)}\) \\
+    \( p \sim Dirichlet(\alpha_1, \dots \alpha_K)\) \\
+    \begin{equation*}
+    \pi(p) = \frac{\Gamma (\sum_k \alpha_k)}{\prod_K \Gamma(\alpha_k)} \prod_{k=1}^{K}
+        p^{\alpha_k - 1} \mdot I(\sum_{k=1}^{K-1} p_k \leq 1, p_k \geq 0)
+    \end{equation*}
+
+    \begin{align*}
+        p | X_{1:n} \propto& f(x_{1:n} | p) \cdot \pi(p) \\
+        \propto& \prod_{i=1} ^{n} \prod_{k=1}^K p_k ^{I(x_i = k)} \cdot \prod_{k=1}^{K} p_k^{\alpha_k -1} \\
+        \propto & \prod_{k=1}^K p_K ^{n_k + \alpha_k -1}, \quad \text{where }n_k = \sum_{i=1}^{N} I(x_i = k) \\
+        p | X_{1:n} \sim& Dir(n_1 + \alpha_1, \dots n_k + \alpha_k)
+    \end{align*}
 
 
 

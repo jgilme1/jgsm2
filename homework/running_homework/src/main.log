@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.9)  28 JAN 2020 08:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.9)  28 JAN 2020 08:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -106,17 +106,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--30
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--35
+
+ []
+
+./main.tex:37: Undefined control sequence.
+l.37         p^{\alpha_k - 1} \mdot
+                                    I(\sum_{k=1}^{K-1} p_k \leq 1, p_k \geq 0)
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  836 strings out of 494805
  9316 string characters out of 6178000
- 60907 words of memory out of 5000000
+ 63907 words of memory out of 5000000
  4228 multiletter control sequences out of 15000+600000
  7361 words of font info for 27 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 27i,8n,20p,200b,115s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,10n,20p,200b,125s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
@@ -128,7 +147,7 @@ lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb>
-Output written on main.pdf (1 page, 90985 bytes).
+Output written on main.pdf (1 page, 96692 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
