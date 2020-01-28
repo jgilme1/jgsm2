@@ -99,9 +99,43 @@
       z = x / (x + y)
     \end{lstlisting} \\
 
-    \noindent \textbf{Exercise 1.4}
+    \noindent \textbf{Exercise 1.4} \\
+    Suppose \(X_1 \dots X_n \stackrel{iid}{\sim} \text{Normal}(\theta, \sigma_0 ^2)\) where \(\sigma_0 ^2\)
+    is known. Suppose \(\theta \sim \text{Normal}(m, v)\), find posterior of \(\theta | X_{1:N}\)
 
+    \begin{align*}
+      \theta | X_{1:N} \propto& \text{ exp}\big\{ \frac{-1}{2\sigma_0 ^2} \sum_{i=1}^{N} (x_i - \theta)^2 \big \}
+         \cdot \text{ exp}\big\{ \frac{-1}{2v^2}(\theta - m)^2 \big \} \\
+        \propto& \text{ exp} \big\{ \frac{-1}{2 \sigma_0 ^2} \big(\sum_{i=1}^N (x_i ^2 + \theta ^2 - 2 \theta \x_i)\big)
+           + \frac{-1}{2 v^2} \big( \theta^2 + m^2 - 2 \theta m\big) \big \} \\
+        \propto& \text{ exp} \big \{ \frac{-\theta ^2}{2} \cdot (\frac{1}{v^2} + \frac{n}{\sigma_0 ^2})
+           + \theta (\frac{m}{v^2} + \frac{\sum x_i}{\sigma_0 ^2}) - (\frac{m^2}{2v^2}
+           + \frac{\sum x_i^2}{2 \sigma_0 ^2}) \big \} \\
+        \propto& \text{ exp} \big \{ \frac{-\theta ^2}{2} \cdot (\frac{1}{v^2} + \frac{n}{\sigma_0 ^2})
+           + \theta (\frac{m}{v^2} + \frac{\sum x_i}{\sigma_0 ^2}) \big \} \\
+        \propto& \text { exp} \big \{ \frac{-1}{2} \big(
+               \theta ^2  (\frac{1}{v^2} + \frac{n}{\sigma_0 ^2})
+               -  2 \theta (\frac{m}{v^2} + \frac{\sum x_i}{\sigma_0 ^2}) \big)
+    \end{align*}
 
+    \hline
+
+    Completing the square:
+    \begin{align*}
+        &a =  \frac{1}{v^2} + \frac{n}{\sigma_0 ^2} \\
+        &b =  \frac{m}{v^2} + \frac{\sum x_i}{\sigma_0 ^2} \\
+        &a \theta ^2 - 2 \theta b = a ( \theta ^2 - \frac{2 \theta b}{a}) =
+           a ( (\theta - \frac{b}{a})^2 - \frac{b^2}{a^2})
+    \end{align*}
+    \hline
+
+    \begin{align*}
+    \theta | X_{1:N} \propto& \text{ exp} \big \{ \frac{-1}{2} a (\theta - \frac{b}{a})^2 \big \} \\
+        \propto&  \text{ exp} \big \{ \frac{-1}{2} \frac{(\theta - \frac{b}{a})}{\frac{1}{\sqrt{a}}}^2 \big \} \\
+    \theta | X_{1:N} \sim& \text{Normal}(m = \frac{b}{a}, v = a^{-1}) \\
+    &m = \frac{b}{a}  = \frac{\frac{m}{v^2} + \frac{\sum x_i}{\sigma_0 ^2}} {\frac{1}{v^2} + \frac{n}{\sigma_0 ^2} },
+        \quad v = (\frac{1}{v^2} + \frac{n}{\sigma_0 ^2})^{-1}
+    \end{align*}
 
 
 
