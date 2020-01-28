@@ -1,0 +1,36 @@
+%! Author = jgilmer19
+%! Date = 1/28/20
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath}
+
+% Document
+\begin{document}
+    \noindent John Gilmer \\
+    \noindent SDS 383 D - Statistical Modeling 2 \\
+    \noindent Homework \\
+
+    \textbf{Exercise 1}
+
+    \(X_1, \dots X_n \sim Bernoulli(p), \quad h(p) \sim Beta(\alpha, \beta)\)
+
+    \begin{align*}
+        p | X_1, \dots X_N \propto& f(x_1, \dots x_n |p) \cdot h(p) \\
+        \propto&  p^{\sum x_i} (1 - p)^{n- \sum x_i} \cdot p^{\alpha - 1} (1 - p) ^{\beta - 1} \\
+        \propto&  p^{\sum x_i + \alpha - 1} (1 - p)^{\beta + n - \sum x_i - 1}
+    \end{align*}
+
+    \begin{align*}
+      p | X_1, \dots X_N \sim Beta(\sum x_i + \alpha, \beta + n - \sum x_i)
+    \end{align*}
+    \\
+
+    \textbf{Exercise 2}
+
+
+
+
+\end{document}
