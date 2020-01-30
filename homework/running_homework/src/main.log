@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.9)  28 JAN 2020 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.10.9)  30 JAN 2020 09:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -282,7 +282,39 @@ l.130     \hline
 I expect to see \noalign only after the \cr of
 an alignment. Proceed, and I'll ignore this case.
 
-[3] [4] (./main.aux) ) 
+[3]
+./main.tex:165: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.165     \hline
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./main.tex:172: Misplaced \noalign.
+\hline ->\noalign 
+                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
+l.172     \hline
+                
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+[5] [6] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  2880 strings out of 494805
  36798 string characters out of 6178000
@@ -303,10 +335,10 @@ f-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (4 pages, 130324 bytes).
+Output written on main.pdf (6 pages, 139108 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

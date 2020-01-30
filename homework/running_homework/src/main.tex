@@ -152,6 +152,79 @@
       \omega | X_{1:n} \sim& \text{Gamma}(\alpha + \frac{n}{2}, \beta + \frac{\sum (x_i - \theta)^2}{2})
     \end{align*}
 
+    \noindent \textbf{Exercise 1.6}
+
+    Show that for squared error loss \(R(F,a) = Var_F (a) + Bias_F (a) ^2\). Show that \(R(F,a)\) is minimized
+    at \(a \equiv \mu(F)\).
+    
+    \begin{gather*}
+        R(F,a)  = \int (\mu(F) -a)^2 dF \\
+        R(F,a)  = \int (\mu(F)^2 - 2 \mu (F) a + a ^2)dF\\
+        R(F,a)  = \mu(F)^2 - 2 \mu (F) \int a dF +  \int a^2 dF
+    \end{gather*}
+    \hline
+    \begin{gather*}
+        \text{Var}_F (a)  = E_F ( a ^2) - E_F(a)^2 = \int a^2 dF - (\int a dF)^2\\
+        \text{Bias}_F (a)^2 = E_F (a - \mu (F)) ^2 = (\int (a - \mu (F)) dF)^2 \\
+        \text{Bias}_F (a)^2 = (\int a dF - \mu(F))^2 = (\int a dF)^2 - 2 \mu(F) \int a dF + \mu(F)^2 \\
+        \text{Var}_F (a) + \text{Bias}_F (a)^2 = \mu(F)^2 - 2 \mu(F)\int a dF + \int a^2 dF = R(F,a)
+    \end{gather*}
+    \hline
+    Minimizing R(F, a)
+    \begin{gather*}
+        R(F, a) = \mu(F)^2 - 2 \mu (F) \int a dF +  \int a^2 dF \\
+        \frac{d} {da} (R(F,a)) = 2 \int a dF - 2 \mu (F) = 0 \\
+        \mu(F) = \int a dF \quad \text{R(F,a) is  minimized at } a = \mu(F)
+    \end{gather*}
+
+    \noindent \textbf{Exercise 1.7}
+    Suppose that \(L(F, a)\) is the squared-error loss \((\mu(F) - a)^2\). Show that the Bayes action is
+    given by the posterior mean.
+    
+    \begin{gather*}
+      \tilde{a}  = \min_a \int L(f, a) \Pi(dF) = \min_a \int (\mu(F) -a )^2 \Pi(dF)\\
+      \tilde{a}  = \min_a \int (\mu(F)^2 - 2a \mu (F) + a^2) \Pi(dF) \\
+      \tilde{a}  = \min_a \int \mu(F)^2\Pi(dF) - 2a \int \mu (F)\Pi(dF) + a^2 \\
+       \frac{d} {da} = 2a - 2 E [\mu(F) | Z =z] = 0 \\
+       \tilde{a}  = \tilde{\mu} = E[\mu(F)|Z=z]
+    \end{gather*}
+
+    \noindent \textbf{Exercise 1.8}
+    Refer to exercises 1.4 and 1.1. Find the Bayes estimators for these problems and compare them to the maximum
+    likelihood estimates.  \\
+
+    From exercise 1.1:
+
+    \begin{gather*}
+        X_1, \dots X_n \sim Bernoulli(p) \quad p|X_1, \dots X_N \sim Beta(\alpha + \sum x_i, \beta + n - \sum x_i) \\
+        \tilde{p} = \frac{a + \sum x_i}{\alpha + \beta + n} \quad \hat{p} = \frac{\sum x_i}{n} \\
+        \tilde{p} = \frac{\alpha}{\alpha + \beta + n} + \frac{n \hat{\theta}}{\alpha + \beta + n} \\
+        \tilde{p} = \frac{\alpha / \alpha + \beta}{\frac{\alpha + \beta + n}{\alpha + \beta}} +
+           \frac{n \hat{\theta}}{\alpha + \beta + n} \\
+        \tilde{p}   = \frac{\alpha + \beta}{\alpha + \beta +n} \cdot \frac{\alpha}{\alpha + \beta} +
+           \hat{\theta} \cdot \frac{n}{\alpha + \beta + n}
+    \end{gather*} \\
+
+    From exercise 1.4: \\
+
+    \begin{gather*}
+        X_1\ dots X_N \sim \text{Normal}(\theta, \sigma_0 ^2) \quad   \theta \sim Normal(m, v) \\
+        \theta | X_1, \dots X_N \sim
+            \text{Normal}(\frac{1}{\frac{1}{v^2} + \frac{n}{\sigma_0 ^2}}
+                  \cdot (\frac{m}{v} + \frac{\sum x_i}{\sigma_0 ^2}),
+        \frac{1}{\frac{1}{v^2} + \frac{n}{\sigma_0 ^2}} ) \\
+        \tilde{\theta} = \frac{1}{\frac{1}{v^2} + \frac{n}{\sigma_0 ^2}}
+                      \cdot (\frac{m}{v} + \frac{\sum x_i}{\sigma_0 ^2}) \\
+        \hat{\theta} = \bar{x} \\
+        \tilde{\theta} = \frac{m/v^2}{1/v^2 + n/\sigma_0 ^2} +
+                  \frac{n \hat{\theta} / \sigma_0 ^2}{1/v^2 + n/\sigma_0 ^2} \\
+        \tilde{\theta} = \frac{1/v^2 \cdot m}{1/v^2 + n/\sigma_0 ^2} +
+                  \frac{n / \sigma_0 ^2 \cdot \hat{\theta}}{1/v^2 + n/\sigma_0 ^2}
+    \end{gather*}
+
+    \noindent \textbf{Exercise 1.9}
+
+       
 
 
 
